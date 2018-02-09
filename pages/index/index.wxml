@@ -1,0 +1,62 @@
+<import src="/components/icon-with-text/icon-with-text.wxml"/> 
+<import src="/components/goods-item/goods-item.wxml"/> 
+
+<view class="container">
+<!-- <view class="search">
+    <icon class="iconfont icon-taobao search-icon"></icon>
+    <icon class="iconfont icon-yewutubiaosheng search-icon"></icon>
+    <input 
+      class="search-input"
+      placeholder='淘货er，淘尽天下便宜货!'  
+      placeholder-style='color: #F15A24'
+    >
+    </input>
+    <icon class="iconfont icon-101 search-icon"></icon>
+    <icon class="iconfont icon-tehui search-icon"></icon>
+  </view> -->
+
+  <!-- <swiper 
+    class="swiper"
+    indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" 
+    interval="{{interval}}" 
+    duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <image 
+          src="{{item}}" 
+          class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper> -->
+
+
+  <!-- <scroll-view scroll-x>
+    <view class="flex-around category">
+      <icon-with-text 
+        wx:for="{{category}}"
+        wx:key="{{index}}"
+        postData="{{item}}"
+        data-index="{{index}}"
+        bindtap="selectCategory"
+      >
+      </icon-with-text> 
+    </view>
+  </scroll-view> -->
+
+  <scroll-view scroll-y>
+    <view class="goods-item-wrapper">
+      <goods-item></goods-item>  
+    </view>
+    <view class="goods-item-wrapper">
+      <goods-item></goods-item>  
+    </view>
+    <view class="goods-item-wrapper">
+      <goods-item></goods-item>  
+    </view>
+    <view class="goods-item-wrapper">
+      <goods-item></goods-item>  
+    </view>
+  </scroll-view>
+</view>
+

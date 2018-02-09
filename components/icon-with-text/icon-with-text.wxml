@@ -1,0 +1,4 @@
+<view class="flex-column-center icon-with-text {{postData.active}}" >
+  <icon class="iconfont {{postData.icon}} icon" />
+  <text class="text">{{postData.text}}</text>  
+</view>

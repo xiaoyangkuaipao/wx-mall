@@ -1,0 +1,74 @@
+/**index.wxss**/
+@import "/app.wxss";
+@import "/components/icon-with-text/icon-with-text.wxss";
+@import "/components/goods-item/goods-item.wxss";
+.swiper{
+  height: 20vh;
+}
+
+.slide-image{
+  width: 100vw;
+  height: 20vh;
+  background-size: cover;
+}
+
+.search{
+  width: 100vw;
+  margin-bottom: .2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.search-icon{
+  font-size: 2rem;
+}
+
+.search-icon:nth-of-type(1){
+  color: orange;
+}
+
+.search-icon:nth-of-type(2){
+  color: #F15A24;
+}
+
+.search-icon:nth-of-type(3){
+  color: #F15A24;
+}
+
+.search-icon:nth-of-type(4){
+  color: orange;
+}
+
+.search-input{
+  position: relative;
+  width: 10rem;
+  height: 1.2rem !important;
+  line-height: 1.2rem;
+  padding-left: 1.5rem;
+  font-size: .65rem;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  border: 1px solid #CCC;
+}
+
+.search-input::before {
+  position: absolute;
+  left: .2rem;
+  top: .35rem;
+  content: "\e61e";
+  font-family: "iconfont";
+  font-size: 1rem;
+}
+
+.category{
+  width: 35rem;
+  height: 3.5rem;
+  margin: .5rem 0;
+}
+
+.goods-item-wrapper{
+  width: 96vw;
+  margin: 0 auto;
+  margin-bottom: .5rem;
+}

@@ -1,0 +1,21 @@
+<view class="goods-item flex-between">
+  <image class="goods-image">
+  </image> 
+  <view class="flex-column-center">
+    <view class="goods-info">
+      <text class="title">111</text>
+      <view class="flex-between-center">
+        <text class="left-text">***</text>
+        <text class="right-text">******</text>  
+      </view>
+      <text class="left-text delete-text">**：1500</text>
+      <text class="left-text important-text">***： 1000</text>
+    </view>
+  </view>
+  <view class="get-ticket">
+    <!-- <text>立</text>
+    <text>即</text>
+    <text>领</text>
+    <text>券</text> -->
+  </view>
+</view>

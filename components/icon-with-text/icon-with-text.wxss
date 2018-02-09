@@ -1,0 +1,21 @@
+/* components/icon-with-text.wxss */
+@import "/app.wxss";
+
+.icon-with-text {
+  width: 2rem;
+  height: 2.5rem;
+  color: #BBB;
+}
+
+.icon-with-text .icon {
+  font-size: 1.3rem;
+}
+
+.icon-with-text .text {
+  font-size: .8rem;
+  letter-spacing: 1px;
+}
+
+.icon-with-text.active{
+  color: #A8725A;
+}

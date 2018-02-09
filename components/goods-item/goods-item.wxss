@@ -1,0 +1,71 @@
+/* components/good-item/good-item.wxss */
+@import "/app.wxss";
+.goods-item{
+  position: relative;
+  width: 100%;
+  height: 30vw;
+  border: 1px solid #CCC;
+  border-radius: 10rpx;
+}
+
+.goods-item::before {
+  content: "\e605";
+  position: absolute;
+  top: -.5rem;
+  left: -.3rem;
+  font-size: 1.2rem;
+  color: #A8725A;
+  font-family: "iconfont";
+  transform: rotate(-45deg);
+}
+
+.goods-image{
+  width: 30vw;
+  height: 30vw;
+}
+
+.goods-info{
+  width: 50vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.goods-info .title{
+  padding-left: .2rem;
+  width: 100%;
+  font-size: .75rem;
+}
+
+.goods-info .left-text{
+  padding-left: .2rem;
+  font-size: .6rem;
+}
+
+.goods-info .right-text{
+  padding-right: 1rem;
+  font-size: .6rem;
+}
+
+.goods-info .delete-text{
+  text-decoration: line-through;
+}
+
+.goods-info .important-text{
+  font-size: 1rem;
+  color: red;
+}
+
+.get-ticket{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 16vw;
+  height: 100%;
+  font-size: .8rem;
+  border-radius: 0 10rpx 10rpx 0;
+  background-color: #A8725A;
+  color: #EEE;
+}

@@ -2,7 +2,7 @@
 <import src="/components/goods-item/goods-item.wxml"/> 
 
 <view class="container">
-<!-- <view class="search">
+ <view class="search">
     <icon class="iconfont icon-taobao search-icon"></icon>
     <icon class="iconfont icon-yewutubiaosheng search-icon"></icon>
     <input 
@@ -13,9 +13,9 @@
     </input>
     <icon class="iconfont icon-101 search-icon"></icon>
     <icon class="iconfont icon-tehui search-icon"></icon>
-  </view> -->
+  </view> 
 
-  <!-- <swiper 
+  <swiper 
     class="swiper"
     indicator-dots="{{indicatorDots}}"
     autoplay="{{autoplay}}" 
@@ -28,10 +28,10 @@
           class="slide-image"/>
       </swiper-item>
     </block>
-  </swiper> -->
+  </swiper>  
 
 
-  <!-- <scroll-view scroll-x>
+   <scroll-view scroll-x>
     <view class="flex-around category">
       <icon-with-text 
         wx:for="{{category}}"
@@ -42,20 +42,11 @@
       >
       </icon-with-text> 
     </view>
-  </scroll-view> -->
+  </scroll-view> 
 
-  <scroll-view scroll-y>
-    <view class="goods-item-wrapper">
-      <goods-item></goods-item>  
-    </view>
-    <view class="goods-item-wrapper">
-      <goods-item></goods-item>  
-    </view>
-    <view class="goods-item-wrapper">
-      <goods-item></goods-item>  
-    </view>
-    <view class="goods-item-wrapper">
-      <goods-item></goods-item>  
+  <scroll-view class="goods-wrapper" scroll-y>
+    <view class="goods-item-wrapper" wx:for="{{goodsInfo}}" wx:key="{{index}}">
+      <goods-item data-goods-info="{{item}}"></goods-item>  
     </view>
   </scroll-view>
 </view>

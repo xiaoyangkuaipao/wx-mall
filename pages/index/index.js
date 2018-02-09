@@ -8,6 +8,7 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    goodsInfo: [],
     imgUrls: [
       'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
       'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
@@ -65,7 +66,21 @@ Page({
       category: this.data.category
     })
   },
+  getGoodsItem: function() {
+    const self = this;
+    wx.request({
+      url: "https://www.iamyangqi.cn/wx-new-mall/fileTest.php",
+      success: function (resp) {
+        self.goodsInfo = resp.data.results.n_tbk_item;
+        self.setData({
+          goodsInfo: self.goodsInfo
+        })
+      }
+    });
+  },
   onLoad: function () {
+    this.getGoodsItem();
+
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

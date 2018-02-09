@@ -1,21 +1,23 @@
 <view class="goods-item flex-between">
-  <image class="goods-image">
+  <image class="goods-image" src="{{goodsInfo.pict_url}}">
   </image> 
   <view class="flex-column-center">
     <view class="goods-info">
-      <text class="title">111</text>
+      <text class="title">{{goodsInfo.title}}</text>
       <view class="flex-between-center">
-        <text class="left-text">***</text>
-        <text class="right-text">******</text>  
+        <text class="left-text">{{goodsInfo.nick}}</text>
+        <text class="right-text">销量：{{goodsInfo.volume}}</text>  
       </view>
-      <text class="left-text delete-text">**：1500</text>
-      <text class="left-text important-text">***： 1000</text>
+      <text class="left-text delete-text">原价：{{goodsInfo.reserve_price}}</text>
+      <text class="left-text important-text">券后价：{{goodsInfo.zk_final_price}}</text>
+
+      <text class="discount">{{goodsInfo.reserve_price - goodsInfo.zk_final_price}}元</text>
     </view>
   </view>
   <view class="get-ticket">
-    <!-- <text>立</text>
+    <text>立</text>
     <text>即</text>
     <text>领</text>
-    <text>券</text> -->
+    <text>券</text> 
   </view>
 </view>

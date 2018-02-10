@@ -12,7 +12,7 @@
 }
 
 .icon-with-text .text {
-  font-size: .8rem;
+  font-size: .7rem;
   letter-spacing: 1px;
 }
 

@@ -2,7 +2,27 @@
 <import src="/components/goods-item/goods-item.wxml"/> 
 
 <view class="container">
- <view class="search">
+  <view 
+    class="show-detail"
+    wx:if="{{showDetail}}" 
+    data-selector="background"
+    bindtap="closeShowDetail">
+    <view class="show-detail-title">了解更多</view>
+    <scroll-view scroll-y class="show-detail-imgs">
+      <image class="show-detail-item" wx:for="{{detailInfo}}" wx:key="{{index}}" src="{{item}}">
+      </image>    
+    </scroll-view>
+  </view> 
+  <view class="get-ticket-info" wx:if="{{showInfo}}">
+    <view class="get-ticket-info-content">
+      <view style="display: flex; flex-direction: column; align-items: center; ">
+        <icon type="success_no_circle" size="20"/>
+        <text>领券成功</text>
+        <text class="info-tips">提示：直接打开淘宝即可领取优惠券淘货er啦！</text>
+      </view>
+    </view>
+  </view>
+  <view class="search">
     <icon class="iconfont icon-taobao search-icon"></icon>
     <icon class="iconfont icon-yewutubiaosheng search-icon"></icon>
     <input 
@@ -29,9 +49,7 @@
       </swiper-item>
     </block>
   </swiper>  
-
-
-   <scroll-view scroll-x>
+  <scroll-view scroll-x>
     <view class="flex-around category">
       <icon-with-text 
         wx:for="{{category}}"
@@ -46,7 +64,11 @@
 
   <scroll-view class="goods-wrapper" scroll-y>
     <view class="goods-item-wrapper" wx:for="{{goodsInfo}}" wx:key="{{index}}">
-      <goods-item data-goods-info="{{item}}"></goods-item>  
+      <goods-item
+       data-goods-info="{{item}}"
+       bindlongpress="showDetailFn"
+       bindtap="getTicket"
+      ></goods-item>  
     </view>
   </scroll-view>
 </view>

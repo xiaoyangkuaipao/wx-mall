@@ -14,7 +14,7 @@
       <text class="discount">{{goodsInfo.reserve_price - goodsInfo.zk_final_price}}元</text>
     </view>
   </view>
-  <view class="get-ticket">
+  <view class="get-ticket" bindtap="getTicket">
     <text>立</text>
     <text>即</text>
     <text>领</text>

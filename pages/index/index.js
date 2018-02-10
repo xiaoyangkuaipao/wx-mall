@@ -1,14 +1,20 @@
 //index.js
 //获取应用实例
-const app = getApp()
+const app = getApp();
 
+app.globalData = {
+  showInfo: false
+};
 Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
+    showInfo: app.globalData.showInfo,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     goodsInfo: [],
+    detailInfo: [],
+    showDetail: false,
     imgUrls: [
       'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
       'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
@@ -18,6 +24,7 @@ Page({
     autoplay: true,
     interval: 5000,
     duration: 1000,
+    timer: {},
     category: [{
       icon: "icon-quanbu",
       text: "全部",
@@ -66,6 +73,29 @@ Page({
       category: this.data.category
     })
   },
+  closeShowDetail: function(e) {
+    if (e.currentTarget.dataset.selector === e.target.dataset.selector) {
+      this.setData({
+        showDetail: false
+      });
+      clearTimeout(this.timer);
+    }
+  },
+  showDetailFn: function(e) {
+    const self = this;
+    this.showDetail = true;
+    this.detailInfo = e.target.dataset.goodsInfo.small_images.string;
+    this.setData({
+      detailInfo: this.detailInfo,
+      showDetail: this.showDetail
+    });
+    this.timer = setTimeout(function(){
+      self.setData({
+        showDetail: false
+      })
+      clearTimeout(self.timer);
+    }, 5000)
+  },
   getGoodsItem: function() {
     const self = this;
     wx.request({
@@ -74,11 +104,15 @@ Page({
         self.goodsInfo = resp.data.results.n_tbk_item;
         self.setData({
           goodsInfo: self.goodsInfo
-        })
+        });
+        wx.hideLoading();
       }
     });
   },
   onLoad: function () {
+    wx.showLoading({
+      title: "淘货er中。。。"
+    });
     this.getGoodsItem();
 
     if (app.globalData.userInfo) {
@@ -109,11 +143,22 @@ Page({
     }
   },
   getUserInfo: function(e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  getTicket: function(e) {
+    const self = this;
+    this.setData({
+      showInfo: app.globalData.showInfo,
+    })
+    const timer = setTimeout(function(){
+      self.setData({
+        showInfo: false,
+      })
+      clearTimeout(timer);
+    }, 1000)
   }
 })

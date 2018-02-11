@@ -2,6 +2,7 @@
   "component": true,
   "usingComponents": {
     "icon-with-text": "/components/icon-with-text/icon-with-text",
-    "goods-item": "/components/goods-item/goods-item"
+    "goods-item": "/components/goods-item/goods-item",
+    "tickets-item": "/components/tickets-item/tickets-item"
   }
 }

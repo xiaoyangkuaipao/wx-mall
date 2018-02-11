@@ -1,0 +1,27 @@
+<view class="tickets-item flex-between">
+  <view class="tickets-left-info">
+    <image class="tickets-image" src="{{ticketsInfo.pict_url}}">
+    </image> 
+    <text class="volumn">销量：{{ticketsInfo.volume}}</text>
+    <!-- <text class="volumn">券量：{{ticketsInfo.coupon_remain_count}}</text> -->
+  </view>
+  <view class="flex-column-center">
+    <view class="tickets-info">
+      <view class="title">{{ticketsInfo.title}}</view>
+      <view class="shop">{{ticketsInfo.shop_title}}</view>
+      <view class="reason">推荐理由： {{ticketsInfo.item_description}}</view>
+      <view class="delete-text">原价： {{ticketsInfo.zk_final_price}}</view>
+      <view class="discount">券后价： {{ticketsInfo.discount}}</view>
+       <view class="zkh-price">
+        {{ticketsInfo.discountPrice}}元券
+      </view> 
+    </view>
+  </view>
+  <view class="get-ticket" bindtap="getTicket">
+    <text>立</text>
+    <text>即</text>
+    <text>领</text>
+    <text>券</text>  
+    <icon class="iconfont icon-youhuiquan"></icon>
+  </view>
+</view>

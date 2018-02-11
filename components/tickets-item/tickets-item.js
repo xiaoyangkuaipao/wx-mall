@@ -1,6 +1,6 @@
 const app = getApp()
 
-// components/good-item/good-item.js
+// components/tickets-item/tickets-item.js
 Component({
   /**
    * 组件的属性列表
@@ -12,8 +12,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    goodsInfo: {},
-    env: app.globalData.env
+    ticketsInfo: {},
   },
 
   /**
@@ -24,18 +23,20 @@ Component({
       const self = this;
       app.globalData.showInfo = true;
       wx.request({
-        url: "https://www.iamyangqi.cn/wx-new-mall/convertLink.php",
+        url: app.globalData.env + "convertLink.php",
         method: "GET",
         header: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
         data: {
-          url: self.goodsInfo.item_url
+          url: self.ticketsInfo.coupon_click_url,
+          pic: self.ticketsInfo.pict_url,
+          title: self.ticketsInfo.title,
         },
         success: function (resp) {
-          if (resp.data.model) {
+          if (resp.data.data.model) {
             wx.setClipboardData({
-              data: resp.data.model,
+              data: resp.data.data.model,
             })
           }
         }
@@ -43,9 +44,9 @@ Component({
     }
   },
   attached: function () {
-    this.goodsInfo = this.dataset.goodsInfo;
+    this.ticketsInfo = this.dataset.ticketsInfo;
     this.setData({
-      goodsInfo: this.goodsInfo
+      ticketsInfo: this.ticketsInfo
     })
   } 
 })

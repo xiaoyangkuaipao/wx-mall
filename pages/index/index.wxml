@@ -38,6 +38,7 @@
   <swiper 
     class="swiper"
     indicator-dots="{{indicatorDots}}"
+    circular="{{circular}}"
     autoplay="{{autoplay}}" 
     interval="{{interval}}" 
     duration="{{duration}}">
@@ -56,20 +57,22 @@
         wx:key="{{index}}"
         postData="{{item}}"
         data-index="{{index}}"
+        data-content="{{item}}"
         bindtap="selectCategory"
       >
       </icon-with-text> 
     </view>
-  </scroll-view> 
+  </scroll-view>  
 
-  <scroll-view class="goods-wrapper" scroll-y>
-    <view class="goods-item-wrapper" wx:for="{{goodsInfo}}" wx:key="{{index}}">
-      <goods-item
-       data-goods-info="{{item}}"
+  <scroll-view class="goods-wrapper" scroll-y bindscroll="scrollLoad">
+     <view class="goods-item-wrapper" wx:for="{{ticketsInfo}}" wx:key="{{index}}">
+      <tickets-item
+       data-tickets-info="{{item}}"
        bindlongpress="showDetailFn"
        bindtap="getTicket"
-      ></goods-item>  
-    </view>
+      ></tickets-item>  
+    </view> 
+    <view class="footer-text" wx:if="isLast">~~是时候看到淘货er的底线了~~</view>
   </scroll-view>
 </view>
 
